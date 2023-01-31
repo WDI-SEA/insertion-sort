@@ -5,9 +5,18 @@ def is_sorted(ls):
             return False
     return True
 
+
 def insertion_sort(li):
-    # implement your algorithm here
-    pass
+    # iterate through list and move elements down if they are less than the element to the left
+    for index in range(len(li)):
+        # current number for comaprisons
+        current_number = li[index]
+        # use while loop to go back down the list
+        cur_pos = index - 1
+        while cur_pos >= 0 and current_number < li[cur_pos]:
+            # swap the values
+            li[cur_pos], li[cur_pos + 1] = li[cur_pos + 1], li[cur_pos]
+            cur_pos -= 1
 
 
 # for testing

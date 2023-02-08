@@ -30,6 +30,7 @@ def is_sorted(ls):
 initial_array = [2,9,4,6,1,3]
 
 def insertion_sort(array):
+
     # check array[i] against sorted_range (array[0] through array[i-1]):
     for i in range(len(array)-1):
         if i == (len(array)):
@@ -41,19 +42,22 @@ def insertion_sort(array):
             # move to next index
 
         # if array[i] < last index of sorted_range:
-        if array[i+1] < array[i]:
-            for i in range(len(array)-1):
-                # if i == 0:
-                #     print('the number is already at index 0 of the array')
-                #     return
+        else: #if array[i+1] < array[i]:
+
+            while_loop_running = True
+
+            while while_loop_running:
+        
                 if array[i+1] < array[i]:
                     print('it needs to be swapped with the number to its right')
             # swap array[i] with array [i-1]
                     array[i], array[i+1] = array[i+1], array[i]
+                    continue
                 else:
                     print('it is smaller than the number to its right and in proper place')
                     print(array)
-                    return
+                    while_loop_running = False
+                    # return
     print(array)
 
 insertion_sort(initial_array)

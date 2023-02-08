@@ -7,8 +7,16 @@ def is_sorted(ls):
 
 
 def insertion_sort(li):
-    # implement your algorithm here
-    pass
+    # iterate the list once in an outer loop
+    for current_index, current_value in enumerate(li):
+        # inner loop that iterates backwards and places items where they need to be
+        inner_loop_index = current_index - 1
+        while inner_loop_index >= 0 and current_value  < li[inner_loop_index]:
+            li[inner_loop_index], li[inner_loop_index + 1] = li[inner_loop_index + 1], li[inner_loop_index]
+            inner_loop_index -= 1
+            # check if the current value is less than than the one to the right
+                # if so swap, if not break
+            # if we bump into index 0, stop and place the current value at 0
 
 
 # for testing
@@ -18,3 +26,7 @@ li = [44, 41, 35, 34, 7, 8, 44, 38, 28, 44, 16, 31, 13, 31, 42, 19, 2, 47, 32, 1
 insertion_sort(li)
 # should return True, because insertion sort is an in-place sort
 print(is_sorted(li))
+print(li)
+
+
+

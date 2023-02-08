@@ -7,8 +7,11 @@ def is_sorted(ls):
 
 
 def insertion_sort(li):
-    # implement your algorithm here
-    pass
+    for i in range(len(li) - 1):
+      j = i
+      while j > 0 and li[j-1] > li[j]:
+        li[j], li[j-1] = li[j-1], li[j]
+        j -= 1
 
 
 # for testing

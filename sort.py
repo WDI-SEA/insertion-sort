@@ -7,8 +7,16 @@ def is_sorted(ls):
 
 
 def insertion_sort(li):
-    # implement your algorithm here
-    pass
+    # for loop that will iterate through 'li' starting from the second element(index 1) to the last element. 'i' will keep track of the current position in the list being considered
+    for i in range(1, len(li)):
+        # intialize j to i, so that j will keep track of the current position in the list being considered
+        j = i
+        # while loop that continues until either j is no longer greater than 0 or li[j-1] is no longer greater than li[j]. The first condition ensures that the loop does not go beyond the first element of the list, while the second condition ensures that the elements are in the correct order
+        while j > 0 and li[j - 1] > li[j]:
+            # this line swaps the elements at positionsj-1 and j in the list
+            li[j - 1], li[j] = li[j], li[j - 1]
+            # this line decrements the value of j by 1. This moves j one position to the left in the list and prepares it for the next iteration of the while loop
+            j -= 1
 
 
 # for testing

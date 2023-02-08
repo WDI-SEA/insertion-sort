@@ -8,6 +8,29 @@ def is_sorted(ls):
 
 def insertion_sort(li):
     # implement your algorithm here
+
+    for i in range(0, len(li)):
+        current_value = li[i]
+        for j in range(i-1, -1, -1):
+            if current_value < li[j]:
+                li[j], li[j+1] = li[j+1], li[j]
+            else: 
+                break
+
+    # for current_index, current_value in enumerate(li):
+    #     inner_loop_index = current_index -1
+    #     while inner_loop_index >= 0 and current_value < li[inner_loop_index]:
+    #         li[inner_loop_index], li[inner_loop_index + 1] = li[inner_loop_index +1], li[inner_loop_index]
+    #         inner_loop_index -= 1
+
+    # for i in range(len(li)-1):
+    #     j = i
+    #     while li[j-1] > li[j] and j > 0:
+    #         li[j-1], li[j] = li[j], li[j-1]
+    #         j -= 1
+
+
+    
     pass
 
 

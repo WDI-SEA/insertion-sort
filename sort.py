@@ -8,7 +8,25 @@ def is_sorted(ls):
 
 def insertion_sort(li):
     # implement your algorithm here
-    pass
+    # going through the list
+    for i in range(1, len(li)):
+        # value of that index
+        selected = li[i]
+        # compare at this index
+        compare = i - 1
+        # print(compare)
+        
+        # compare the one with selected while going through the list
+        while compare >= 0 and selected <= li[compare]:
+            # push compare to where selected was
+            li[compare + 1] = li[compare]
+            # compare goes down the step
+            compare = compare - 1
+        # if condition is met
+        li[compare + 1] = selected
+        print(li)
+        # selected = compare
+
 
 
 # for testing

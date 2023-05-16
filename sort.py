@@ -10,11 +10,12 @@ def insertion_sort(li):
     for i in range(1, len(li)):
         key = li[i]
         j = i - 1
-        print("i: ", "idx: ", i, "li[i]: ", li[i])
+        print("i: ", "idx: ", i, "value: ", li[i])
         while j >= 0 and key < li[j]:
             li[j + 1] = li[j]
             j -= 1
-            print("     j: ", "idx: ", j, "li[j]: ", li[j])
+            print("     j: ", "idx: ", j, "value: ", li[j])
+            print(li)
         li[j + 1] = key
 
 

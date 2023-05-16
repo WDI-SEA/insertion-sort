@@ -9,7 +9,7 @@ def swap(i, j):
     li2[i], li2[j] = li2[j], li2[i]
 
 def insertion_sort(li2):
-    for i in range(0, len(li2)):
+    for i in range(1, len(li2)):
         print(f'this is for loop: {li2}')
         j = i
         while j > 0 and li2[j] < li2[j - 1]:

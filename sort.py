@@ -7,8 +7,19 @@ def is_sorted(ls):
 
 
 def insertion_sort(li):
-    # implement your algorithm here
-    pass
+    # iterate up through the list, dragging down elements until they are in their proper place (either at the start of the list or next to a value to the left of it that is smaller)
+    for current_index in range(len(li)):
+        # for easy comparison, store the number that is being moved
+        comparison_number = li[current_index]
+        inner_index = current_index - 1
+        while inner_index >= 0 and li[inner_index] > li[current_index]:
+            # swap while these are true
+            # li[inner_index], li[inner_index + 1] = li[inner_index + 1], li[inner_index]
+            swap = li[inner_index]
+            li[inner_index] = li[inner_index + 1]
+            li[inner_index + 1] = swap
+            inner_index -= 1
+
 
 
 # for testing
@@ -17,4 +28,5 @@ li = [44, 41, 35, 34, 7, 8, 44, 38, 28, 44, 16, 31, 13, 31, 42, 19, 2, 47, 32, 1
 
 insertion_sort(li)
 # should return True, because insertion sort is an in-place sort
+print(li)
 print(is_sorted(li))

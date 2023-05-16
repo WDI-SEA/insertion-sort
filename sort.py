@@ -8,8 +8,16 @@ def is_sorted(ls):
 
 def insertion_sort(li):
     # implement your algorithm here
-    pass
-
+    for i in range(1, len(li)):
+        temp_value = li[i]
+        j = i - 1
+        while j >= 0:
+            if li[j] > temp_value:
+                li[j + 1] = li[j]
+                j -= 1
+            else:
+                break
+        li[j + 1] = temp_value
 
 # for testing
 li = [44, 41, 35, 34, 7, 8, 44, 38, 28, 44, 16, 31, 13, 31, 42, 19, 2, 47, 32, 17, 14, 27, 30, 4,

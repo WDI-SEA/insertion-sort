@@ -7,8 +7,16 @@ def is_sorted(ls):
 
 
 def insertion_sort(li):
-    # implement your algorithm here
-    pass
+    # iterate up through the list, dragging down elements until they are in their proper place (either at the start of the list or next to a value to the left of it that is smaller)
+    for current_index in range(len(li)):
+        # for easy comparison, store the number that is being moved
+        comparison_number = li[current_index]
+        inner_index = current_index - 1
+        while inner_index >= 0 and li[inner_index] > li[current_index]:
+            swap = li[inner_index]
+            li[inner_index] = li[inner_index + 1]
+            li[inner_index + 1] = swap
+            inner_index -= 1
 
 
 # for testing
